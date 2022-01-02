@@ -2,7 +2,7 @@ from open_imagilib.emulator import *
 
 # ---
 
-from math import sqrt, sin
+from math import sqrt
 
 a = Animation()
 

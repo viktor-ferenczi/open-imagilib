@@ -63,8 +63,8 @@ def draw_chessboard_transition(dark_color1, dark_color2, light_color1, light_col
         a.add_frame(m, 50)
 
 
-draw_chessboard_transition(A, M, Y, Y)
-draw_chessboard_transition(M, A, Y, Y)
+draw_chessboard_transition(K, B, W, Y)
+draw_chessboard_transition(B, K, Y, W)
 
 # ---
 
