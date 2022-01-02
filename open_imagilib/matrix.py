@@ -3,7 +3,7 @@
 __all__ = ['Matrix']
 
 from .colors import Color, on, off
-from .fonts import spectrum
+from .fonts import font_6x8
 
 
 class Matrix(list):
@@ -23,14 +23,20 @@ class Matrix(list):
             for j in range(8):
                 self[i][j] = color
 
-    def character(self, char: str, char_color: Color = on, *, x_offset: int = 0) -> None:
+    def character(self, char: str, char_color: Color = on, *, x_offset: int = 1) -> None:
         if x_offset <= -8 or x_offset >= 8:
             return
 
-        if len(char) != 1 or char < ' ' or char > '\x7f':
-            return
+        if len(char) > 1:
+            char = char[0]
 
-        bitmap = spectrum[ord(char) - 32]
+        if not char:
+            char = ' '
+
+        if char < ' ' or char > '\x7f':
+            char = '\x7f'
+
+        bitmap = font_6x8[ord(char) - 32]
         for i, row in enumerate(bitmap):
             for j, c in enumerate(row):
                 if c != ' ':

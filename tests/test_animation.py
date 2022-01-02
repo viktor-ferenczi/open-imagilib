@@ -38,7 +38,7 @@ class TestAnimation(BaseTestCase):
         scrolling_text("W", W)
 
         render(path='test_scrolling_text_single_character.png', scale=2)
-        self.verify_animation('test_scrolling_text_single_character', 8)
+        self.verify_animation('test_scrolling_text_single_character', 6)
 
     def test_scrolling_text_empty(self) -> None:
 

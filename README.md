@@ -59,9 +59,11 @@ types are always the expected ones, for example convert to an int when an int is
 
 ### Characters look differently
 
-The 8x8 bitmap font in this library has been taken from https://en.wikipedia.org/wiki/ZX_Spectrum_character_set
+The 6x8 bitmap font used in this library is based on an ASCII table rendered using 
+[int10h.org](https://int10h.org/oldschool-pc-fonts/fontlist/font?portfolio_6x8).
+This character set was used by the Atari Portfolio palmtop computers originally.
 
-It may differ from what the real ImagiCharm is using. This may be fixed later, but no promises.
+It differs from the font the ImagiCharm is using. This may be fixed later, but no promises.
 
 ## Legal
 

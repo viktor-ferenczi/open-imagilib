@@ -53,16 +53,13 @@ class Animation(list):
         text_len = len(text)
         for index in range(text_len):
 
-            next_index = index + 1
-            if next_index >= text_len:
-                next_index = 0
+            indices = index, (index + 1) % text_len, (index + 2) % text_len
 
-            matrix.background(back_color)
-            matrix.character(text[index], text_color)
-            self.add_frame(matrix, duration)
+            for offset in range(6):
 
-            for offset in range(1, 8):
                 matrix.background(back_color)
-                matrix.character(text[index], text_color, x_offset=-offset)
-                matrix.character(text[next_index], text_color, x_offset=8 - offset)
+
+                for c, i in enumerate(indices):
+                    matrix.character(text[i], text_color, x_offset=6 * c - offset)
+
                 self.add_frame(matrix, duration)

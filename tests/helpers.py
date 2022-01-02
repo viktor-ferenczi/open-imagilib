@@ -20,6 +20,8 @@ class BaseTestCase(unittest.TestCase):
         for i in range(frame_count):
             self.verify_image(f'{name}.{i:04d}', ext)
 
+        self.assertFalse(os.path.exists(f'{name}.{frame_count:04d}.{ext}'))
+
     def verify_gif(self, name: str):
         result = list(iio.get_reader(f'{name}.gif'))
         expected = list(iio.get_reader(f'reference/{name}.gif'))
