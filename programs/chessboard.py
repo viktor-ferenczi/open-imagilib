@@ -68,5 +68,5 @@ draw_chessboard_transition(M, A, Y, Y)
 
 # ---
 
-render(a, path='chessboard.gif')
-render(a)
+render(path='chessboard.gif')
+render()

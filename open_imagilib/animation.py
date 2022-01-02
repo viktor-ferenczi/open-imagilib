@@ -25,8 +25,7 @@ class Animation(list):
 
         self.loop_count = loop_count
 
-        if Animation.default_instance is None:
-            Animation.default_instance = self
+        Animation.default_instance = self
 
     def clear(self) -> None:
         self.loop_count = 0

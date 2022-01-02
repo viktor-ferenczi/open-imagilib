@@ -6,7 +6,7 @@ from math import sqrt, sin
 
 a = Animation()
 
-def tunnel(color):
+def draw_tunnel(color):
 
     for t in range(50):
 
@@ -37,9 +37,9 @@ def tunnel(color):
 
         a.add_frame(m, 50)
 
-tunnel(M)
+draw_tunnel(M)
 
 # ---
 
-render(a, path='tunnel_vision.gif')
-render(a)
+render(path='tunnel_vision.gif')
+render()

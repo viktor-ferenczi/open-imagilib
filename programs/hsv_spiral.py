@@ -60,5 +60,5 @@ for t in range(60):
 
 # ---
 
-render(a, path='hsv_spiral.gif')
-render(a)
+render(path='hsv_spiral.gif')
+render()
