@@ -13,7 +13,8 @@ It can be used as an emulation environment to develop Python programs for [Imagi
 
 See https://imagilabs.com/ for more information on the **ImagiCharm** devices and the `imagilab` API.
 
----
+![HSV Spiral](/programs/hsv_spiral.gif)
+![HSV Spiral](/programs/tunnel_vision.gif)
 
 ## Intended use case
 
@@ -34,8 +35,6 @@ Developed and tested on Python 3.9.7 (64 bit, Windows)
 Please see the `requirements.txt` file for dependencies. 
 
 To install dependencies: `pip install -r requirements.txt`
-
----
 
 ## Troubleshooting
 
