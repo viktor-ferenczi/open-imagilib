@@ -14,13 +14,13 @@ It can be used as an emulation environment to develop Python programs for [Imagi
 See https://imagilabs.com/ for more information on the **ImagiCharm** devices and the `imagilab` API.
 
 ![HSV Spiral](/programs/hsv_spiral.gif)
-![HSV Spiral](/programs/tunnel_vision.gif)
+![Tunnel Vision](/programs/tunnel_vision.gif)
 
 ## Intended use case
 
 This module is intended to provide a reasonably good ImagiCharm "emulator" for parents with 
-Python development skills, allowing them to use a proper Python IDE (like JetBrains PyCharm) 
-while helping their children in their first steps in programming their ImagiCharm devices.
+Python development skills. It allows for using a proper Python IDE (like JetBrains PyCharm) 
+while helping the children in their first steps in programming.
 
 ## Remarks
  

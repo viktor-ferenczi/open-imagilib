@@ -8,7 +8,10 @@ a = Animation()
 
 def draw_tunnel(color):
 
-    for t in range(50):
+    duration = 25
+    speed = 3 / duration
+
+    for t in range(duration):
 
         for i in range(8):
             y = i - 3.5
@@ -18,9 +21,9 @@ def draw_tunnel(color):
 
                 r = sqrt(x * x + y * y)
 
-                r1 = 0.06 * t - 3
-                r2 = 0.06 * t
-                r3 = 0.06 * t + 3
+                r1 = speed * t - 3
+                r2 = speed * t
+                r3 = speed * t + 3
 
                 v1 = 1 - (r - r1) ** 2
                 v2 = 1 - (r - r2) ** 2
@@ -35,7 +38,7 @@ def draw_tunnel(color):
 
                 m[i][j] = (r, g, b)
 
-        a.add_frame(m, 50)
+        a.add_frame(m, 25)
 
 draw_tunnel(M)
 
