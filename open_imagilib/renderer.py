@@ -56,21 +56,27 @@ class Renderer(list):
 
 
 class OpenCvRenderer(Renderer):
-    def show(self, scale: int = 8):
-        title = 'ImagiCharm Preview'
+    def show(self, scale: int = 8, title : str = 'imagiCharm Preview'):
 
-        key = 0
+        cv2.namedWindow(title)
+
+        def is_window_visible():
+            return cv2.getWindowProperty(title, cv2.WND_PROP_VISIBLE) >= 1
+
+        stop = False
         repeats = 0
 
         while 1:
 
             for frame in self:
                 cv2.imshow(title, frame.get_pixels(scale))
+
                 key = cv2.waitKey(frame.duration)
-                if key == ESC:
+                if key == ESC or not is_window_visible():
+                    stop = True
                     break
 
-            if key == ESC:
+            if stop:
                 break
 
             if self.loop_count == 0:

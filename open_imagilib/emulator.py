@@ -1,4 +1,4 @@
-""" Emulation of the global namespace used to run ImagiCharm programs
+""" Emulation of the global namespace used by imagiCharm programs
 """
 from typing import Optional
 
