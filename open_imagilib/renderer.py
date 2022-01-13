@@ -86,7 +86,8 @@ class OpenCvRenderer(Renderer):
             if repeats >= self.loop_count:
                 break
 
-        cv2.destroyWindow(title)
+        if is_window_visible():
+            cv2.destroyWindow(title)
 
 
 class FileRenderer(Renderer):
