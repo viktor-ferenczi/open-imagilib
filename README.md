@@ -17,6 +17,7 @@ Please visit the [imagi Learning Center](https://www.notion.so/imagilabs/imagi-L
 ![Tunnel Vision](/programs/tunnel_vision.gif)
 ![Gradient](/programs/gradient.gif)
 ![Chessboard](/programs/chessboard.gif)
+![Olympics](/programs/olympics.gif)
 
 ## Intended use case
 
