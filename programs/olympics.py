@@ -53,7 +53,6 @@ COMPRESSED_OLYMPIC_RINGS = [
     ' ^99 ^74|',
 ]
 
-
 # Image as Compressed Text version 1 (RLE)
 MAGIC = 'ICT1'
 VALUES = '_.:-+=abcdefghijklmnopqrstuvwxyz'
@@ -128,45 +127,65 @@ from math import pi, sin, cos
 a = Animation()
 
 
-def animated_camera(img, *, downscale=3, frames=120, total_time=2.0):
+def animated_camera(img, *, scale=1, frames=120, total_time_ms=2000):
     h = len(img)
     w = len(img[0])
-    yo = 0.5 * (h - 8 * downscale)
-    xo = 0.5 * (w - 8 * downscale)
+    yo = 0.5 * (h - 8.01 / scale)
+    xo = 0.5 * (w - 8.01 / scale)
     omega = 2 * pi / frames
-    ft = total_time / frames
+    frame_time_ms = int(round(total_time_ms / frames))
     for t in range(frames):
-        y = int(round(yo + yo * cos(omega * t)))
-        x = int(round(xo - xo * sin(omega * t)))
-        blit(img, y, x, downscale)
-        a.add_frame(m, ft)
+        y = yo + yo * cos(omega * t)
+        x = xo - xo * sin(omega * t)
+        transform(img, y, x, scale)
+        a.add_frame(m, frame_time_ms)
 
 
-def blit(img, y, x, s):
+def transform(img, y0, x0, s):
+    si = 1 / s
     for i in range(8):
-        y0 = y + i * s
+        y = y0 + i * si
+        iy = int(y)
+        fy1 = y - iy
+        fy0 = 1 - fy1
+        r0 = img[iy]
+        r1 = img[iy + 1]
         for j in range(8):
-            x0 = x + j * s
-            m[i][j] = average_colors(
-                img[p][q]
-                for p in range(y0, y0 + s)
-                for q in range(x0, x0 + s)
-            )
+            x = x0 + j * si
+            ix = int(x)
+            fx1 = x - ix
+            fx0 = (1 - fx1)
+            w00 = fy0 * fx0
+            w01 = fy0 * fx1
+            w10 = fy1 * fx0
+            w11 = fy1 * fx1
+            m[i][j] = sum_colors([
+                multiply_color(r0[ix], w00),
+                multiply_color(r0[ix + 1], w01),
+                multiply_color(r1[ix], w10),
+                multiply_color(r1[ix + 1], w11),
+            ])
 
 
-def average_colors(colors):
-    n = 0
+def sum_colors(colors):
     rs, gs, bs = 0, 0, 0
     for r, g, b in colors:
         rs += r
         gs += g
         bs += b
-        n += 1
-    h = n // 2
-    return (rs + h) // n, (gs + h) // n, (bs + h) // n
+    return rs, gs, bs
 
 
-animated_camera(OLYMPIC_RINGS)
+def multiply_color(color, multiplier):
+    r, g, b = color
+    return (
+        int(round(r * multiplier)),
+        int(round(g * multiplier)),
+        int(round(b * multiplier)),
+    )
+
+
+animated_camera(OLYMPIC_RINGS, scale=1 / 3)
 
 # ---
 
