@@ -1,3 +1,4 @@
+import difflib
 import os
 import unittest
 
@@ -32,3 +33,19 @@ class BaseTestCase(unittest.TestCase):
             self.assertTrue(np.all(result_frame == expected_frame))
 
         os.remove(f'{name}.gif')
+
+    def verify_text_file(self, name: str, ext='txt'):
+        with open(f'{name}.{ext}', 'rt') as f:
+            result = f.readlines()
+
+        with open(f'reference/{name}.{ext}', 'rt') as f:
+            expected = f.readlines()
+
+        if result == expected:
+            os.remove(f'{name}.{ext}')
+            return
+
+        for diff in difflib.unified_diff(expected, result):
+            print(diff, end='')
+
+        self.assertTrue(False)
