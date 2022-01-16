@@ -73,7 +73,7 @@ def decompress(text):
 a = Animation()
 
 
-def animated_camera(img, *, scale=1.0, frames=120, frame_time_ms=25):
+def animated_camera(img, *, scale=1.0, frames=100, frame_time_ms=25):
     h = len(img)
     w = len(img[0])
     yo = 0.5 * (h - 8.01 / scale)
