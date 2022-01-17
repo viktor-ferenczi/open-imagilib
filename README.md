@@ -58,6 +58,12 @@ The lack of color calibration of the real imagiCharm devices is not accounted fo
 so the exact colors on screen will differ from what's shown on the real devices.
 Always test your program on a real device and correct the colors as needed.
 
+Currently, the colors differ based on where the program is uploaded from to imagiCharm. 
+Uploading from Android seems to work slightly better than from the Web UI. For dark 
+color components there is a huge difference.
+
+Hopefully this aspect will improve in the future.
+
 ### Available libraries
 
 The mobile app applies more validation on the code before execution and the range of Python libraries
