@@ -1,8 +1,8 @@
-from math import pi, sin, cos
-
 from open_imagilib.emulator import *
 
 # ---
+
+from math import pi, sin, cos
 
 # Image as Compressed Text version 1 (RLE)
 MAGIC = 'ICT1'
