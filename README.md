@@ -15,9 +15,9 @@ Please visit the [imagi Learning Center](https://www.notion.so/imagilabs/imagi-L
 
 ![HSV Spiral](/programs/hsv_spiral.gif)
 ![Tunnel Vision](/programs/tunnel_vision.gif)
-![Gradient](/programs/gradient.gif)
 ![Chessboard](/programs/chessboard.gif)
 ![Olympics](/programs/olympics.gif)
+![Gradient](/programs/gradient.gif)
 ![Olympics 2](/programs/olympics2.gif)
 
 ## Intended use case
