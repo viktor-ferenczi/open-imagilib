@@ -41,16 +41,21 @@ To install dependencies: `pip install -r requirements.txt`
 
 ## Troubleshooting
 
+### Uploading to imageCharm
+
+The best way to upload your code from the desktop Python IDE to a physical imagiCharm device is through the [imagiLabs Web App](https://imagilabs.com/app) (currently in beta).
+
+Create a new program on the Web App, copy-paste the code from PyCharm (or other Python IDE) into the browser, then save the project.
+
+The program can be uploaded directly to an imageCharm device if your PC has bluetooth connectivity.
+
+The Android and iOS imagiLabs apps can upload the program to an imagiCharm, since they have access to the saved project in the cloud. 
+
 ### Color mismatch
 
 The lack of color calibration of the real imagiCharm devices is not accounted for, 
 so the exact colors on screen will differ from what's shown on the real devices.
 Always test your program on a real device and correct the colors as needed.
-
-### Wrong indentation
-
-Copying code into imagiCharm's mobile editor breaks the indentation right now, even if it looks correct. 
-The only workaround is to re-indent the source code in the mobile app's editor, which is not convenient.
 
 ### Available libraries
 
