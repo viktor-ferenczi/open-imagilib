@@ -69,7 +69,7 @@ w.p[8][8] = 1
 a = Animation()
 for t in range(100):
     w.step(0.3, 1.0)
-    w.draw(m, 1.25)
+    w.draw(m, 2.5)
     a.add_frame(m, 33)
 
 # ---

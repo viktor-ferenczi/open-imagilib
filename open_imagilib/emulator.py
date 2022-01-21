@@ -54,7 +54,10 @@ def render(animation: Animation = None, *, blink_rate: int = 0, outdoor_mode: bo
     brightness = 256 if outdoor_mode else 192
 
     if path is None:
-        OpenCvRenderer(animation, brightness=brightness).show(scale)
+        try:
+            OpenCvRenderer(animation, brightness=brightness).show(scale)
+        except KeyboardInterrupt:
+            print('Interrupted')
     else:
         FileRenderer(animation, brightness=brightness).save(path, scale)
 
