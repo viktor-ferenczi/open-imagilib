@@ -20,6 +20,7 @@ Please visit the [imagi Learning Center](https://www.notion.so/imagilabs/imagi-L
 ![Gradient](/programs/gradient.gif)
 ![Olympics 2](/programs/olympics2.gif)
 ![Fluid](/programs/fluid.gif)
+![Mandelbrot](/programs/mandelbrot.gif)
 
 ## Intended use case
 
