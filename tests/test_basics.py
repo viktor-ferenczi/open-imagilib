@@ -59,6 +59,17 @@ class TestBasics(BaseTestCase):
         render(path='test_clear.png')
         self.verify_image('test_clear')
 
+    def test_background(self) -> None:
+
+        for i in range(8):
+            for j in range(8):
+                m[i][j] = (i, j, i + j)
+
+        background(A)
+
+        render(path='test_background.png')
+        self.verify_image('test_background')
+
     def test_character(self) -> None:
 
         character('Y', Y)
@@ -89,4 +100,3 @@ class TestBasics(BaseTestCase):
         character('\t', W)
         render(path='test_character_not_ascii.png')
         self.verify_image('test_character_not_ascii')
-

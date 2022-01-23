@@ -18,6 +18,10 @@ def clear():
     m.background(off)
 
 
+def background(color):
+    m.background(color)
+
+
 def character(char: str, char_color: Color = on, back_color: Color = 0) -> None:
     if back_color:
 
