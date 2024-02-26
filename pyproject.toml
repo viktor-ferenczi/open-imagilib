@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "open-imagilib"
+version = "0.1.0"
+description = "Implementation of the imagilib library + ImagiCharm emulator. See https://imagilabs.com/ for the original."
+license = "MIT"
+authors = ["Viktor Ferenczi <viktor@ferenczi.eu>"]
+readme = "README.md"
+repository = "https://github.com/viktor-ferenczi/open-imagilib"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+opencv-python = ">=4.0"
+imageio = ">=2.0"
+numpy = ">=1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
